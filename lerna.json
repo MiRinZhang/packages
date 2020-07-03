@@ -2,7 +2,30 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.0",
+  "version": "independent",
   "useWorkspaces": true,
-  "npmClient": "yarn"
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "yes": true,
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md",
+        "*.txt",
+        "test/**",
+        "**/test/**",
+        "eslint/**",
+        "scripts/**"
+      ],
+      "registry": "https://npm.pkg.github.com/"
+    },
+    "bootstrap": {
+      "hoist": "true",
+      "npmClientArgs": [
+        "--no-package-lock"
+      ],
+      "registry": "https://npm.pkg.github.com/"
+    }
+  }
 }

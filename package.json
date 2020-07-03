@@ -1,6 +1,13 @@
 {
-  "name": "root",
+  "name": "@mirinzhang/root",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna run --parallel clean",
+    "cleanBuild": "rm -rf packages/*/dist",
+    "build": "node scripts/build.js",
+    "publish": "lerna publish"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -8,6 +15,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "lerna": "^3.22.1",
+    "typescript": "^3.9.6"
   }
 }
