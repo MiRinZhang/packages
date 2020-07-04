@@ -21,7 +21,6 @@
       "registry": "https://registry.npmjs.org/"
     },
     "bootstrap": {
-      "ignore": "component-*",
       "npmClientArgs": [
         "--no-package-lock"
       ],
