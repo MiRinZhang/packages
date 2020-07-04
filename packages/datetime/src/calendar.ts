@@ -108,7 +108,7 @@ export function generatorDateList(param: IDateListParams): IDateListSource {
  * @param date
  * @param blankOut
  */
-export function computeDateStr(
+function computeDateStr(
     year: number,
     month: number,
     date: number,
@@ -248,7 +248,7 @@ export function generatorRangeCalendar(
  * @param minDate
  * @param maxDate
  */
-export function computeRangeYear(
+function computeRangeYear(
     minDate: string | Date,
     maxDate: string | Date
 ): IRangeCalendar {
@@ -328,7 +328,7 @@ function parseDateInfo(date: string | Date): IParseDateInfo {
  * @param start
  * @param end
  */
-export function compareDate(start: string | Date, end: string | Date): boolean {
+function compareDate(start: string | Date, end: string | Date): boolean {
     // 任何一个为空，都不通过
     if (!start || !end) {
         return false;
@@ -383,7 +383,7 @@ export function isSameDate(start: string | Date, end: string | Date): boolean {
 export function generatorWeekHeader(
     type: IWeekLocale = 1,
     start: IWeekStart = 0
-) {
+): Array<string> {
     const weekdays = WEEK_DAYS[type];
     const after = weekdays.slice(0, start);
     const before = weekdays.slice(start);

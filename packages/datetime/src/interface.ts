@@ -13,7 +13,7 @@ export interface IDateListParams {
     year: number; // 年
     month: number; // 月
     start: IWeekStart; // 日历开始星期
-    blankOut?: boolean;
+    blankOut?: boolean; // 不在本月的日期是否空白
 }
 
 export type IDayList = Array<IDateListItem>;
