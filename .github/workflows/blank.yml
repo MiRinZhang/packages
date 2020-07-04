@@ -34,19 +34,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Lint and Build
+      - name: Set up node version@13.x
         uses: actions/setup-node@v1
         with:
           #        node-version: ${{ matrix.node-version }}
           node-version: '13.x'
+
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run eslint
-        run: yarn lint --fix
+        run: npm run lint --fix
 
       - name: Clean lerna parallel
-        run: yarn clean
+        run: npm run clean
 
       - name: Build packages
-        run: yarn build
+        run: npm run build

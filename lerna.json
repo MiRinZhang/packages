@@ -4,7 +4,7 @@
   ],
   "version": "independent",
   "useWorkspaces": true,
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "command": {
     "publish": {
       "conventionalCommits": true,
@@ -18,14 +18,14 @@
         "eslint/**",
         "scripts/**"
       ],
-      "registry": "https://npm.pkg.github.com/"
+      "registry": "https://registry.npmjs.org/"
     },
     "bootstrap": {
       "hoist": "true",
       "npmClientArgs": [
         "--no-package-lock"
       ],
-      "registry": "https://npm.pkg.github.com/"
+      "registry": "https://registry.npmjs.org/"
     }
   }
 }
