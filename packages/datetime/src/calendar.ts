@@ -177,8 +177,8 @@ export function generatorCalendar(
     blankOut: boolean
 ): Array<IMonthCalendar> {
     if (
-        !checkMonth(startMonth) ||
-        !checkMonth(endMonth) ||
+        !isValidMonth(startMonth) ||
+        !isValidMonth(endMonth) ||
         startMonth > endMonth
     ) {
         return [];
@@ -360,7 +360,7 @@ function adjustDate(date: string | Date): Date {
  * 校验月份
  * @param month
  */
-function checkMonth(month: number): boolean {
+function isValidMonth(month: number): boolean {
     return !(month <= 0 || month > 12);
 }
 
