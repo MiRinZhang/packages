@@ -298,7 +298,6 @@ function parseDateInfo(date: string | Date): IParseDateInfo {
 
         // 是否有匹配到结果（传入日期合适是否正确）
         if (!result) {
-            console.warn(`传入日期 ${date} 格式错误，请检查`);
             // 如果日期格式错误，则直接返回房钱日期
             const now = new Date();
             return {
