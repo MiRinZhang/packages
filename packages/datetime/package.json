@@ -10,14 +10,13 @@
   "author": "MiRinZhang <mirinzhang@gmail.com>",
   "homepage": "https://github.com/MiRinZhang/packages#readme",
   "license": "ISC",
-  "main": "dist/index",
-  "types": "dist/index",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "src",
     "dist"
   ],
   "publishConfig": {
