@@ -353,10 +353,7 @@ function compareDate(start: string | Date, end: string | Date): boolean {
         return false;
     }
 
-    const startDate = adjustDate(start);
-    const endDate = adjustDate(end);
-
-    return endDate > startDate;
+    return adjustDate(end) > adjustDate(start);
 }
 
 /**

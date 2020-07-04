@@ -41,8 +41,14 @@ jobs:
       - name: Install
         run: yarn install
 
+      - name: Check eslint
+        run: yarn lint
+
       - name: Build
         run: yarn build
+
+      - name: Check updated
+        run: yarn check
 
       - name: Publish
         run: yarn pub
