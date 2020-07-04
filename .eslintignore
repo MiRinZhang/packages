@@ -1,0 +1,13 @@
+/node_modules
+/lib
+/build
+/.git
+/scripts
+package.json
+lerna.json
+packages/*/node_modules
+packages/*/lib
+packages/*/dist
+packages/*/test/fixtures
+packages/*/test/tmp
+packages/**/scripts/**
