@@ -7,7 +7,7 @@
     "lint": "eslint ./packages --ext .ts,.tsx,.js,.jsx",
     "build": "node scripts/build.js && lerna bootstrap",
     "changed": "lerna changed",
-    "pub": "lerna publish from-package --yes"
+    "pub": "lerna publish"
   },
   "workspaces": [
     "packages/*"

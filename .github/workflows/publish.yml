@@ -47,7 +47,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Check updated
+      - name: Check changed
         run: yarn changed
 
       - name: Publish
