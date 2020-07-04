@@ -21,7 +21,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout branch
-      uses: actions/checkout@release
+      uses: actions/checkout@v2
 
     - name: Set up node version@13.x
       uses: actions/setup-node@v1
