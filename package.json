@@ -6,7 +6,7 @@
     "cleanBuild": "rm -rf packages/*/dist",
     "lint": "eslint ./packages --ext .ts,.tsx,.js,.jsx",
     "build": "node scripts/build.js && lerna bootstrap",
-    "pub": "yarn lerna publish from-package --yes --dist-tag next"
+    "pub": "yarn lerna publish from-git --yes --dist-tag next"
   },
   "workspaces": [
     "packages/*"
