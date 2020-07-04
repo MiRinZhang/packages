@@ -1,8 +1,8 @@
 const fs = require('fs');
-const { resolve, } = require('path');
+const { resolve } = require('path');
 const { exec } = require('child_process');
 
-function buildPackages (packageRootPath) {
+function buildPackages(packageRootPath) {
     const dirs = fs.readdirSync(packageRootPath);
 
     dirs.forEach(filename => {
@@ -10,13 +10,19 @@ function buildPackages (packageRootPath) {
         const stat = fs.statSync(packagePath);
 
         if (stat.isDirectory()) {
-            exec(`cd ${packagePath} && node ../../scripts/compile.js`, (err, stdout) => {
-                if (err) {
-                    console.error(`build package [${filename}] failed`, err);
-                    return;
+            exec(
+                `cd ${packagePath} && node ../../scripts/compile.js`,
+                (err, stdout) => {
+                    if (err) {
+                        console.error(
+                            `Build package [${filename}] failed`,
+                            err
+                        );
+                        return;
+                    }
+                    console.log(`Build package [${filename}] success`);
                 }
-                console.log(`build package [${filename}] success`);
-            });
+            );
         }
     });
 }
