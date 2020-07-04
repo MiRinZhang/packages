@@ -229,7 +229,7 @@ export function generatorRangeCalendar(
     let rangDateList: Array<IMonthCalendar> = [];
 
     // 遍历生成范围日历
-    rangYears.forEach(item => {
+    rangYears.forEach((item) => {
         const result = generatorCalendar(
             item.year,
             item.startMonth,
