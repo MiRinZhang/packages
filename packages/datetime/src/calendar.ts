@@ -102,49 +102,6 @@ export function generatorDateList(param: IDateListParams): IDateListSource {
 }
 
 /**
- * 拼接日期信息
- * @param year
- * @param month
- * @param date
- * @param blankOut
- */
-function computeDateStr(
-    year: number,
-    month: number,
-    date: number,
-    blankOut: boolean
-): IDateInfo {
-    const tempMonth = month < 10 ? `0${month}` : month;
-    const tempDate = date < 10 ? `0${date}` : date;
-    const key = `${year}/${month}/${date}`;
-
-    if (blankOut) {
-        return {
-            value: '',
-            zhStr: '',
-            year: '',
-            month: '',
-            date: '',
-            showValue: '',
-            key
-        };
-    }
-
-    const value = `${year}-${tempMonth}-${tempDate}`;
-    const isCurrentDay = isSameDate(value, new Date());
-
-    return {
-        value,
-        zhStr: `${year}年${month}月${date}日`,
-        year,
-        month,
-        date,
-        showValue: isCurrentDay ? '今天' : date,
-        key
-    };
-}
-
-/**
  * @name convertDyadicArray 一维数组转换为二维数组
  * @param param
  * @example convertDyadicArray([2,3,4,5,6,7], 3) => [[2,3],[4,5],[6,7]]
@@ -241,6 +198,65 @@ export function generatorRangeCalendar(
     });
 
     return rangDateList;
+}
+
+/**
+ * 计算顶部周名称
+ * @param type
+ * @param start
+ */
+export function generatorWeekHeader(
+    type: IWeekLocale = 1,
+    start: IWeekStart = 0
+): Array<string> {
+    const weekdays = WEEK_DAYS[type];
+    const after = weekdays.slice(0, start);
+    const before = weekdays.slice(start);
+
+    return before.concat(after);
+}
+
+/**
+ * 拼接日期信息
+ * @param year
+ * @param month
+ * @param date
+ * @param blankOut
+ */
+function computeDateStr(
+    year: number,
+    month: number,
+    date: number,
+    blankOut: boolean
+): IDateInfo {
+    const tempMonth = month < 10 ? `0${month}` : month;
+    const tempDate = date < 10 ? `0${date}` : date;
+    const key = `${year}/${month}/${date}`;
+
+    if (blankOut) {
+        return {
+            value: '',
+            zhStr: '',
+            year: '',
+            month: '',
+            date: '',
+            showValue: '',
+            key
+        };
+    }
+
+    const value = `${year}-${tempMonth}-${tempDate}`;
+    const isCurrentDay = isSameDate(value, new Date());
+
+    return {
+        value,
+        zhStr: `${year}年${month}月${date}日`,
+        year,
+        month,
+        date,
+        showValue: isCurrentDay ? '今天' : date,
+        key
+    };
 }
 
 /**
@@ -368,25 +384,9 @@ function isValidMonth(month: number): boolean {
  * @param start
  * @param end
  */
-export function isSameDate(start: string | Date, end: string | Date): boolean {
+function isSameDate(start: string | Date, end: string | Date): boolean {
     const startDate = new Date(adjustDate(start)).setHours(0, 0, 0, 0);
     const endDate = new Date(adjustDate(end)).setHours(0, 0, 0, 0);
 
     return startDate === endDate;
-}
-
-/**
- * 计算顶部周名称
- * @param type
- * @param start
- */
-export function generatorWeekHeader(
-    type: IWeekLocale = 1,
-    start: IWeekStart = 0
-): Array<string> {
-    const weekdays = WEEK_DAYS[type];
-    const after = weekdays.slice(0, start);
-    const before = weekdays.slice(start);
-
-    return before.concat(after);
 }
