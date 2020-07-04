@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: packages
+name: Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -10,11 +10,15 @@ on:
     paths-ignore:
       - README.md
       - LICENSE
+      - build.yaml
+      - release.yaml
   pull_request:
     branches: [ master ]
     paths-ignore:
       - README.md
       - LICENSE
+      - build.yaml
+      - release.yaml
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +35,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
+      - name: Checkout branch
         uses: actions/checkout@master
 
       - name: Set up node version@13.x
