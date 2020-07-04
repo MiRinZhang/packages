@@ -1,13 +1,9 @@
 name: publish
 on:
-#  pull_request:
-#    branches:
-#      - master
-#    types: [closed]
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+    types: [closed]
 
 env:
   CI: true
