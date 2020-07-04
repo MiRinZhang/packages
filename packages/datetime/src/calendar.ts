@@ -14,6 +14,9 @@ import {
     IWeekStart
 } from './interface';
 
+/**
+ * 周次
+ */
 const WEEK_DAYS = [
     ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     ['日', '一', '二', '三', '四', '五', '六']
@@ -249,13 +252,13 @@ function computeDateStr(
     const isCurrentDay = isSameDate(value, new Date());
 
     return {
+        key,
         value,
         zhStr: `${year}年${month}月${date}日`,
         year,
         month,
         date,
-        showValue: isCurrentDay ? '今天' : date,
-        key
+        showValue: isCurrentDay ? '今天' : date
     };
 }
 
