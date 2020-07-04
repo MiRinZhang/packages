@@ -35,7 +35,7 @@ jobs:
     - name: Clean lerna parallel
       run: npm run build
 
-    - name: Build packages
+    - name: Publish packages
       run: npm run publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
