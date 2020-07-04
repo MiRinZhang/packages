@@ -23,7 +23,9 @@
     "bootstrap": {
       "hoist": "true",
       "npmClientArgs": [
-        "--no-package-lock"
+        "--no-package-lock",
+        "--production",
+        "--no-optional"
       ],
       "registry": "https://registry.npmjs.org/"
     }
