@@ -9,7 +9,7 @@ on:
       - release.yaml
   pull_request:
     branches: [ master ]
-    types: [closed]
+    types: [ closed ]
     paths-ignore:
       - README.md
       - LICENSE
