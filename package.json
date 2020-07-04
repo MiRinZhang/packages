@@ -46,5 +46,6 @@
       "pre-commit": "lint-staged",
       "pre-push": "yarn cleanBuild && yarn clean"
     }
-  }
+  },
+  "license": "MIT"
 }
